@@ -48,7 +48,20 @@ for i in range(0,len(y_pred)):
     else:
         y_pred[i]=int(0)
 
+#Logistic regrassion
+# Fitting Logistic Regression to the Training set
+from sklearn.linear_model import LogisticRegression
+classifier_logistic = LogisticRegression(random_state = 0)
+classifier_logistic.fit(x_train, y_train)
 
+# Predicting the Test set results
+y_pred = classifier_logistic.predict(x_test)
+
+#confusion matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+
+##accuracy obtained 82.17
 
 
 
